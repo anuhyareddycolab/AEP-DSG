@@ -1,0 +1,1647 @@
+{
+	"info": {
+		"_postman_id": "d91f0a29-dea7-4de2-b6a5-392754d74e1d",
+		"name": "DSG Schema design AB_AC",
+		"description": "This collection contains objects to create DSG Brand Datatypes, Abandon Cart field group, Abandon Browse field group.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"item": [
+				{
+					"name": "Identity Mixin Individual Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"Identity Fields\",\n    \"description\": \"DSG profile identity fields\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \"https://ns.adobe.com/xdm/context/profile\"\n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                         \"identity\": {\n                                    \"title\": \"identity\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"ECID\"\n                                    ],\n                                    \"properties\": {\n                                        \"athleteId\": {\n                                            \"title\": \"athlete ID\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        },\n                                        \"emailHash\": {\n                                            \"title\": \"emailHash\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        },\n                                        \"ECID\": {\n                                            \"title\": \"ECID\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        }\n                                    }\n                         }\n                }               \n            }\n        }\n    }\n }\n}                                    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Identification Mixin Individual Profile (experience)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"identification\",\n    \"description\": \"DSG experience identity fields\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [ ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                         \"identity\": {\n                                    \"title\": \"identity\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"ECID\"\n                                    ],\n                                    \"properties\": {\n                                        \"athleteId\": {\n                                            \"title\": \"athlete ID\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        },\n                                        \"emailHash\": {\n                                            \"title\": \"emailHash\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        },\n                                        \"ECID\": {\n                                            \"title\": \"ECID\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        }\n                                    }\n                         },\n                    \"brand\": {\n\t\t\t\t\t\t\t\t\t\t\t\"title\": \"DSG Brand\",\n\t\t\t\t\t\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\t\t\t\t\t\"isRequired\": false,\n\t\t\t\t\t\t\t\t\t\t\t\"$ref\": \"https://ns.adobe.com/dsg/datatypes/f29cc57486a41ebe8298732ebb0e05a5e3028ec55dae6741\",\n\t\t\t\t\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\t\t\t\t\"meta:xdmType\": \"object\"\n\t\t\t\t\t\t\t}  \n\n                }               \n            }\n        }\n    }\n }\n}                                    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Brand dataType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var json = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"brandDataType\", json[\"meta:altId\"])"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"Brands\",\n    \"description\": \"enmum list of DSG Brands\",\n    \"properties\": {\n        \"brand\": {\n            \"title\": \"brand\",\n            \"description\": \"DSG Brand\",\n            \"type\": \"string\",\n             \"enum\": [\n            \"DSG\", \"PL\", \"GG\", \"FS\", \"GONE\"\n          ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"datatypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create cart Items",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var json = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"cartitems\", json[\"meta:altId\"])"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n       \"type\": \"object\",\n        \"title\": \"cartItems\",\n                                    \"description\": \"CartItems for Abandon Cart and Abandon Browse\",\n                                    \"properties\": {\n                                        \"product3\": {\n                                            \"title\": \"product3\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                            },\n                                        \"product4\": {\n                                            \"title\": \"product4\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \n                                        \"product5\": {\n                                            \"title\": \"product5\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \"product2\": {\n                                            \"title\": \"product2\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                            \n                                            },\n                                        \n                                        \"product6\": {\n                                            \"title\": \"product6\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                           \n                                            },\n                                        \n                                        \"product1\": {\n                                            \"title\": \"product1\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                    \n                                            }\n                                        }\n                                \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"datatypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create abandon Cart audit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var json = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"abandonCartAudit\", json[\"meta:altId\"])"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"title\": \"abandonCartAudit\",\n        \"description\": \"\",\n        \"type\": \"object\",\n        \"properties\": {\n            \"createUpdateDateTime\": {\n                \"title\": \"createUpdateDateTime\",\n                \"description\": \"\",\n                \"type\": \"string\",\n                \"format\": \"date-time\",\n                \"required\": [],\n                \"meta:xdmType\": \"date-time\"\n            }\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"datatypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create abandon browse audit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var json = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"abandonBrowseAudit\", json[\"meta:altId\"])"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"title\": \"abandonBrowseAudit\",\n        \"description\": \"\",\n        \"type\": \"object\",\n        \"properties\": {\n            \"createUpdateDateTime\": {\n                \"title\": \"createUpdateDateTime\",\n                \"description\": \"\",\n                \"type\": \"string\",\n                \"format\": \"date-time\",\n                \"required\": [],\n                \"meta:xdmType\": \"date-time\"\n            }\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"datatypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Browse Mixin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"DSG - Abandon Browse\",\n    \"description\": \"Abandon Browse Field Group\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \"https://ns.adobe.com/xdm/context/profile\"\n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"abandonBrowse\": {\n                            \"title\": \"Abandon Browse\",\n                            \"description\": \"Abandon Browse\",\n                            \"type\": \"object\",\n                            \"isRequired\": false,\n                            \"properties\": {\n                                \"abandonBrowseAudit\": {\n                                    \"title\": \"abandonBrowseAudit\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"createUpdateDateTime\"\n                                    ],\n                                    \"properties\": {\n                                        \"createUpdateDateTime\": {\n                                            \"title\": \"createUpdateDateTime\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"format\": \"date-time\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"date-time\"\n                                        }\n                                    },\n                                    \"meta:xdmType\": \"object\"\n                                    },\n                             \"cartItems\": {\n                                    \"title\": \"cartItems\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"product1\"\n                                    ],\n                                    \"properties\": {\n                                        \"product3\": {\n                                            \"title\": \"product3\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                            },\n                                        \"product4\": {\n                                            \"title\": \"product4\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \n                                        \"product5\": {\n                                            \"title\": \"product5\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \"product2\": {\n                                            \"title\": \"product2\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                            \n                                            },\n                                        \n                                        \"product6\": {\n                                            \"title\": \"product6\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                           \n                                            },\n                                        \n                                        \"product1\": {\n                                            \"title\": \"product1\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                    \n                                            }\n                                        },\n                                    \"meta:xdmType\": \"object\"\n                                }\n                             \n                            },\n                            \"meta:xdmType\": \"object\"\n                        }\n                     \n                    },\n                    \"meta:xdmType\": \"object\"\n                }\n            }\n        }\n    }\n}   \n\n                                      \n\n                    \n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Browse Mixin_v2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var json = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"abandonBrowseMixin\", json[\"meta:altId\"])"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"Abandon Browse Field Group v2\",\n    \"description\": \"Abandon Browse Field Group\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \"https://ns.adobe.com/xdm/context/profile\"\n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"abandonBrowse\": {\n                            \"title\": \"Abandon Browse\",\n                            \"description\": \"Abandon Browse\",\n                            \"type\": \"object\",\n                            \"isRequired\": false,\n                            \"properties\": {\n                                \"DSGAbandonBrowse\": {\n                                    \"title\": \"Dick's Sporting Goods Abandon Browse\",\n                                    \"description\": \"Dick's Sporting Goods Browse Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonBrowseAudit\": {\n                                            \"title\": \"DSG Audit Abandon Browse\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.2f9d978f04be527aa90421e0cd08e3362ee62165820cfa78\"\n                                        },\n                                        \"browsedItems\": {\n                                            \"title\": \"DSG Browsed Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"PLAbandonBrowse\": {\n                                    \"title\": \"Public Lands Abandon Browse\",\n                                    \"description\": \"Public Lands Abandon Browse Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonBrowseAudit\": {\n                                            \"title\": \"Public Lands Audit Abandon Browse\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.2f9d978f04be527aa90421e0cd08e3362ee62165820cfa78\"\n                                        },\n                                        \"browsedItems\": {\n                                            \"title\": \"Public Lands Browsed Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"GGAbandonBrowse\": {\n                                    \"title\": \"Golf Galaxy Abandon Browse\",\n                                    \"description\": \"Golf Galaxy Abandon Browse Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonBrowseAudit\": {\n                                            \"title\": \"Golf Galaxy Audit Abandon Browse\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.2f9d978f04be527aa90421e0cd08e3362ee62165820cfa78\"\n                                        },\n                                        \"browsedItems\": {\n                                            \"title\": \"Golf Galaxy Browsed Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"FSAbandonBrowse\": {\n                                    \"title\": \"Field & Stream Abandon Browse\",\n                                    \"description\": \"Field & Stream Abandon Browse Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonBrowseAudit\": {\n                                            \"title\": \"Field & Stream Audit Abandon Browse\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.2f9d978f04be527aa90421e0cd08e3362ee62165820cfa78\"\n                                        },\n                                        \"browsedItems\": {\n                                            \"title\": \"Field & Stream Browsed Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"GONEAbandonBrowse\": {\n                                    \"title\": \"GOING, GOING, GONE Abandon Browse\",\n                                    \"description\": \"GOING, GOING, GONE Abandon Browse Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonBrowseAudit\": {\n                                            \"title\": \"GOING, GOING, GONE Audit Abandon Browse\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.2f9d978f04be527aa90421e0cd08e3362ee62165820cfa78\"\n                                        },\n                                        \"browsedItems\": {\n                                            \"title\": \"GOING, GOING, GONE Browsed Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Cart mixin_v1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"DSG - Abandon Cart\",\n    \"description\": \"Abandon Cart Field Group\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \"https://ns.adobe.com/xdm/context/profile\"\n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"abandonCart\": {\n                            \"title\": \"Abandon Cart\",\n                            \"description\": \"Abandon Cart\",\n                            \"type\": \"object\",\n                            \"isRequired\": false,\n                            \"properties\": {\n                                \"abandonCartAudit\": {\n                                    \"title\": \"abandonCartAudit\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"createUpdateDateTime\"\n                                    ],\n                                    \"properties\": {\n                                        \"createUpdateDateTime\": {\n                                            \"title\": \"createUpdateDateTime\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"format\": \"date-time\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"date-time\"\n                                        }\n                                    },\n                                    \"meta:xdmType\": \"object\"\n                                    },\n                             \"cartItems\": {\n                                    \"title\": \"cartItems\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"product1\"\n                                    ],\n                                    \"properties\": {\n                                        \"product3\": {\n                                            \"title\": \"product3\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                            },\n                                        \"product4\": {\n                                            \"title\": \"product4\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \n                                        \"product5\": {\n                                            \"title\": \"product5\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \"product2\": {\n                                            \"title\": \"product2\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                            \n                                            },\n                                        \n                                        \"product6\": {\n                                            \"title\": \"product6\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                           \n                                            },\n                                        \n                                        \"product1\": {\n                                            \"title\": \"product1\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                    \n                                            }\n                                        },\n                                    \"meta:xdmType\": \"object\"\n                                }\n                             \n                            },\n                            \"meta:xdmType\": \"object\"\n                        }\n                     \n                    },\n                    \"meta:xdmType\": \"object\"\n                }\n            }\n        }\n    }\n}   \n\n                                      \n\n                    \n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Cart mixin_v2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var json = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"abandonCartMixin\", json[\"meta:altId\"])"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"Abandon Cart Field Group v2\",\n    \"description\": \"Abandon Cart Field Group\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \"https://ns.adobe.com/xdm/context/profile\"\n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"abandonCart\": {\n                            \"title\": \"Abandon Cart\",\n                            \"description\": \"Abandon Cart\",\n                            \"type\": \"object\",\n                            \"isRequired\": false,\n                            \"properties\": {\n                                \"DSGAbandonCart\": {\n                                    \"title\": \"Dick's Sporting Goods Abandon Cart\",\n                                    \"description\": \"Dick's Sporting Goods Cart Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonCartAudit\": {\n                                            \"title\": \"DSG Audit Abandon Cart\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.b0db15e34ac3fe8c45a340b3ac86bd9ffe12796b7463d9e9\"\n                                        },\n                                        \"cartItems\": {\n                                            \"title\": \"DSG Cart Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"PLAbandonCart\": {\n                                    \"title\": \"Public Lands Abandon Cart\",\n                                    \"description\": \"Public Lands Abandon Cart Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonCartAudit\": {\n                                            \"title\": \"Public Lands Audit Abandon Cart\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.b0db15e34ac3fe8c45a340b3ac86bd9ffe12796b7463d9e9\"\n                                        },\n                                        \"cartItems\": {\n                                            \"title\": \"Public Lands Cart Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"GGAbandonCart\": {\n                                    \"title\": \"Golf Galaxy Abandon Cart\",\n                                    \"description\": \"Golf Galaxy Abandon Cart Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonCartAudit\": {\n                                            \"title\": \"Golf Galaxy Audit Abandon Cart\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.b0db15e34ac3fe8c45a340b3ac86bd9ffe12796b7463d9e9\"\n                                        },\n                                        \"cartItems\": {\n                                            \"title\": \"Golf Galaxy Cart Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"FSAbandonCart\": {\n                                    \"title\": \"Field & Stream Abandon Cart\",\n                                    \"description\": \"Field & Stream Abandon Cart Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonCartAudit\": {\n                                            \"title\": \"Field & Stream Audit Abandon Cart\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.b0db15e34ac3fe8c45a340b3ac86bd9ffe12796b7463d9e9\"\n                                        },\n                                        \"cartItems\": {\n                                            \"title\": \"Field & Stream Cart Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                },\n                                \"GONEAbandonCart\": {\n                                    \"title\": \"GOING, GOING, GONE Abandon Cart\",\n                                    \"description\": \"GOING, GOING, GONE Abandon Cart Details\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"properties\": {\n                                        \"abandonCartAudit\": {\n                                            \"title\": \"GOING, GOING, GONE Audit Abandon Cart\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.b0db15e34ac3fe8c45a340b3ac86bd9ffe12796b7463d9e9\"\n                                        },\n                                        \"cartItems\": {\n                                            \"title\": \"GOING, GOING, GONE Cart Items\",\n                                            \"description\": \"\",\n                                            \"type\": \"object\",\n                                            \"isRequired\": false,\n                                            \"$ref\": \"_dsg.datatypes.3373d842a30e6e1e6cc4f55c36208484d409865be818757c\"\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Cart Schema",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"object\",\n\t\"title\": \"Abandon Cart\",\n\t\"description\": \"Abandon Cart Schema object\",\n\t\"allOf\": [\n\t\t{\n\t\t\t\"$ref\": \"https://ns.adobe.com/xdm/context/profile\",\n\t\t\t\"type\": \"object\",\n\t\t\t\"meta:xdmType\": \"object\"\n\t\t},\n\t\t{\n\t\t\t\"$ref\": \"_dsg.mixins.9018aa0a2ec0b66a6596c535f9a8dde5658fcc86198548be\"\n\t\t},\n        {\n\t\t\t\"$ref\": \"_dsg.mixins.79cb4045c9a72a0d233ea4d4616cab577bd7920ae094cf00\"\n\t\t}\n\t],\n    \"meta:immutableTags\": [\n        \"union\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"schemas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Browse Schema",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"object\",\n\t\"title\": \"Abandon Browse\",\n\t\"description\": \"Abandon Browse Schema\",\n\t\"allOf\": [\n\t\t{\n\t\t\t\"$ref\": \"https://ns.adobe.com/xdm/context/profile\",\n\t\t\t\"type\": \"object\",\n\t\t\t\"meta:xdmType\": \"object\"\n\t\t},\n\t\t{\n\t\t\t\"$ref\": \"_dsg.mixins.9018aa0a2ec0b66a6596c535f9a8dde5658fcc86198548be\"\n\t\t},\n        {\n\t\t\t\"$ref\": \"_dsg.mixins.7b98a6f31e143976b18bf9f8c43699ab916909fcd4aa1271\"\n\t\t}\n\t]\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"schemas",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "Delete Schemas",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas/_dsg.schemas.fce109dd49fa2e4c5fb0e35598d694485244e13f15876c7c",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"schemas",
+								"_dsg.schemas.fce109dd49fa2e4c5fb0e35598d694485244e13f15876c7c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete DataSet",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/catalog/dataSets/6178c48f82e3261949c0c8c0",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"catalog",
+								"dataSets",
+								"6178c48f82e3261949c0c8c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Field Group",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins/_dsg.mixins.6844eef123e2dfcf5b22c1fced801c6784a63e7566f6c55d",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"mixins",
+								"_dsg.mixins.6844eef123e2dfcf5b22c1fced801c6784a63e7566f6c55d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete DataType",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes/{{brandDataType}}",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"datatypes",
+								"{{brandDataType}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET information",
+			"item": [
+				{
+					"name": "Get Schemas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": " application/vnd.adobe.xdm+json; version=1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas/_dsg.schemas.e91a12f65f73dae58e00938af3149400f04248da513d1a72",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"schemas",
+								"_dsg.schemas.e91a12f65f73dae58e00938af3149400f04248da513d1a72"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get datatype",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": " application/vnd.adobe.xdm+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"datatypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Field Groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": " application/vnd.adobe.xdm+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTenantID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var json = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"tenant_id\", '_'+json.tenantId)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{PLATFORM_GATEWAY}}/data/foundation/schemaregistry/stats",
+							"host": [
+								"{{PLATFORM_GATEWAY}}"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "updates",
+			"item": [
+				{
+					"name": "dataSet modify Abandon Cart",
+					"item": [
+						{
+							"name": "Get DataSets",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"type": "text"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/catalog/dataSets/61c0bb0fba861519488f6d7f",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"catalog",
+										"dataSets",
+										"61c0bb0fba861519488f6d7f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Dataset profile to false",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"type": "text"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json-patch+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n        { \"op\": \"replace\", \"path\": \"/tags/unifiedProfile\", \"value\": [\"enabled:false\"] }\r\n      ]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/catalog/dataSets/61c0bb0fba861519488f6d7f",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"catalog",
+										"dataSets",
+										"61c0bb0fba861519488f6d7f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Dataset profile to upsert and mark for profile",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"type": "text"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json-patch+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n        { \"op\": \"add\", \"path\": \"/tags/unifiedProfile\", \"value\": [\"enabled:true\",\"isUpsert:true\"] }\r\n      ]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/catalog/dataSets/61c0bb0fba861519488f6d7f",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"catalog",
+										"dataSets",
+										"61c0bb0fba861519488f6d7f"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dataSet modify Abandon Browse",
+					"item": [
+						{
+							"name": "Get DataSets",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"type": "text"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"type": "text"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/catalog/dataSets/61c138a8f408151948b6b053",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"catalog",
+										"dataSets",
+										"61c138a8f408151948b6b053"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Set Dataset profile to false",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n        { \"op\": \"replace\", \"path\": \"/tags/unifiedProfile\", \"value\": [\"enabled:false\"] }\r\n      ]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/catalog/dataSets/61c138a8f408151948b6b053",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"catalog",
+								"dataSets",
+								"61c138a8f408151948b6b053"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Dataset profile to upsert and mark for profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n        { \"op\": \"add\", \"path\": \"/tags/unifiedProfile\", \"value\": [\"enabled:true\",\"isUpsert:true\"] }\r\n      ]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/catalog/dataSets/61c138a8f408151948b6b053",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"catalog",
+								"dataSets",
+								"61c138a8f408151948b6b053"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Identification Mixin Individual Profile (experience) Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"identification\",\n    \"description\": \"DSG experience identity fields\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                         \"identity\": {\n                                    \"title\": \"identity\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"ECID\"\n                                    ],\n                                    \"properties\": {\n                                        \"athleteId\": {\n                                            \"title\": \"athlete ID\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        },\n                                        \"emailHash\": {\n                                            \"title\": \"emailHash\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        },\n                                        \"ECID\": {\n                                            \"title\": \"ECID\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                        }\n                                    }\n                         },\n                    \"brand\": {\n\t\t\t\t\t\t\t\t\t\t\t\"title\": \"DSG Brand\",\n\t\t\t\t\t\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\t\t\t\t\t\"isRequired\": false,\n\t\t\t\t\t\t\t\t\t\t\t\"$ref\": \"{{brandDataType}}\",\n\t\t\t\t\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\t\t\t\t\"meta:xdmType\": \"object\"\n\t\t\t\t\t\t\t}  \n\n                }               \n            }\n        }\n    }\n }\n}                                    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_dsg.mixins.5949cd01c63064464afcc076d02e6b032820e515db951fc",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								"_dsg.mixins.5949cd01c63064464afcc076d02e6b032820e515db951fc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Browse Mixin replace",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"DSG - Abandon Browse\",\n    \"description\": \"Abandon Browse Field Group\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \"https://ns.adobe.com/xdm/context/profile\"\n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"abandonBrowse\": {\n                            \"title\": \"Abandon Browse\",\n                            \"description\": \"Abandon Browse\",\n                            \"type\": \"object\",\n                            \"isRequired\": false,\n                            \"properties\": {\n                                \"abandonBrowseAudit\": {\n                                    \"title\": \"abandonBrowseAudit\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"createUpdateDateTime\"\n                                    ],\n                                    \"properties\": {\n                                        \"createUpdateDateTime\": {\n                                            \"title\": \"createUpdateDateTime\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"format\": \"date-time\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"date-time\"\n                                        }\n                                    },\n                                    \"meta:xdmType\": \"object\"\n                                    },\n                             \"brand\": {\n\t\t\t\t\t\t\t\t\t\t\t\"title\": \"DSG Brand\",\n\t\t\t\t\t\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\t\t\t\t\t\"isRequired\": false,\n\t\t\t\t\t\t\t\t\t\t\t\"$ref\": \"{{brandDataType}}\",\n\t\t\t\t\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\t\t\t\t\"meta:xdmType\": \"object\"\n\t\t\t\t\t\t\t},\n                             \"cartItems\": {\n                                    \"title\": \"cartItems\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"product1\"\n                                    ],\n                                    \"properties\": {\n                                        \"product3\": {\n                                            \"title\": \"product3\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                            },\n                                        \"product4\": {\n                                            \"title\": \"product4\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \n                                        \"product5\": {\n                                            \"title\": \"product5\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \"product2\": {\n                                            \"title\": \"product2\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                            \n                                            },\n                                        \n                                        \"product6\": {\n                                            \"title\": \"product6\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                           \n                                            },\n                                        \n                                        \"product1\": {\n                                            \"title\": \"product1\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                    \n                                            }\n                                        },\n                                    \"meta:xdmType\": \"object\"\n                                }\n                             \n                            },\n                            \"meta:xdmType\": \"object\"\n                        }\n                     \n                    },\n                    \"meta:xdmType\": \"object\"\n                }\n            }\n        }\n    }\n}   \n\n                                      \n\n                    \n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_dsg.mixins.4d1082764e3d85198b0b97606a1428a2705719c77f72ab44",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								"_dsg.mixins.4d1082764e3d85198b0b97606a1428a2705719c77f72ab44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abandon Cart mixin replace",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "x-gw-ims-org-id",
+								"value": "{{IMS_ORG}}",
+								"type": "text"
+							},
+							{
+								"key": "x-sandbox-name",
+								"value": "{{SANDBOX_NAME}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"object\",\n    \"title\": \"DSG - Abandon Cart\",\n    \"description\": \"Abandon Cart Field Group\",\n    \"allOf\": [\n        {\n            \"$ref\": \"#/definitions/customFields\"\n        }\n    ],\n    \"meta:intendedToExtend\": [\n        \"https://ns.adobe.com/xdm/context/profile\"\n    ],\n    \"definitions\": {\n        \"customFields\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"{{tenant_id}}\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"abandonCart\": {\n                            \"title\": \"Abandon Cart\",\n                            \"description\": \"Abandon Cart\",\n                            \"type\": \"object\",\n                            \"isRequired\": false,\n                            \"properties\": {\n                                \"abandonCartAudit\": {\n                                    \"title\": \"abandonCartAudit\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"createUpdateDateTime\"\n                                    ],\n                                    \"properties\": {\n                                        \"createUpdateDateTime\": {\n                                            \"title\": \"createUpdateDateTime\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"format\": \"date-time\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"date-time\"\n                                        }\n                                    },\n                                    \"meta:xdmType\": \"object\"\n                                    },\n                            \"brand\": {\n\t\t\t\t\t\t\t\t\t\t\t\"title\": \"DSG Brand\",\n\t\t\t\t\t\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\t\t\t\t\t\"isRequired\": false,\n\t\t\t\t\t\t\t\t\t\t\t\"$ref\": \"{{brandDataType}}\",\n\t\t\t\t\t\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\t\t\t\t\t\"meta:xdmType\": \"object\"\n\t\t\t\t\t\t\t},\n                             \"cartItems\": {\n                                    \"title\": \"cartItems\",\n                                    \"description\": \"\",\n                                    \"type\": \"object\",\n                                    \"isRequired\": false,\n                                    \"required\": [\n                                        \"product1\"\n                                    ],\n                                    \"properties\": {\n                                        \"product3\": {\n                                            \"title\": \"product3\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\",\n                                            \"required\": [],\n                                            \"meta:xdmType\": \"string\"\n                                            },\n                                        \"product4\": {\n                                            \"title\": \"product4\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \n                                        \"product5\": {\n                                            \"title\": \"product5\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                            },\n                                        \"product2\": {\n                                            \"title\": \"product2\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                            \n                                            },\n                                        \n                                        \"product6\": {\n                                            \"title\": \"product6\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                           \n                                            },\n                                        \n                                        \"product1\": {\n                                            \"title\": \"product1\",\n                                            \"description\": \"\",\n                                            \"type\": \"string\"\n                                    \n                                            }\n                                        },\n                                    \"meta:xdmType\": \"object\"\n                                }\n                             \n                            },\n                            \"meta:xdmType\": \"object\"\n                        }\n                     \n                    },\n                    \"meta:xdmType\": \"object\"\n                }\n            }\n        }\n    }\n}   \n\n                                      \n\n                    \n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_dsg.mixins.51e54fea3bcdfadfd1ec1284411ee749afb7b16645f80199",
+							"protocol": "https",
+							"host": [
+								"platform",
+								"adobe",
+								"io"
+							],
+							"path": [
+								"data",
+								"foundation",
+								"schemaregistry",
+								"tenant",
+								"fieldgroups",
+								"_dsg.mixins.51e54fea3bcdfadfd1ec1284411ee749afb7b16645f80199"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
